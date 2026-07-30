@@ -1,0 +1,170 @@
+{
+  "hero": {
+    "badge": "SEO Audit 2.0 Is Here",
+    "heading": "Unlock Your Website's Hidden Potential",
+    "subheading": "Identify critical SEO issues and discover untappped opportunities in seconds.",
+    "paragraph": "Our comprehensive SEO tool scans both on-page elements and off-page signals to give you actionable insights for skyrocketing your rankings.",
+    "cta": {
+      "text": "Start Free Audit",
+      "link": "#audit"
+    },
+    "stats": [
+      { "label": "Websites Audited", "value": "1M+" },
+      { "label": "Active Users", "value": "50K+" },
+      { "label": "Avg. Traffic Boost", "value": "45%" }
+    ]
+  },
+  "services": [
+    {
+      "id": "srv-1",
+      "icon": "Search",
+      "title": "On-Page Analysis",
+      "description": "Deep scan of meta tags, headings, content structure, and keyword density.",
+      "link": "/audit?url=https://example.com&tab=onpage"
+    },
+    {
+      "id": "srv-2",
+      "icon": "Link",
+      "title": "Backlink Profiling",
+      "description": "Evaluate the quality and quantity of your inbound links and referring domains.",
+      "link": "/audit?url=https://example.com&tab=offpage"
+    },
+    {
+      "id": "srv-3",
+      "icon": "Zap",
+      "title": "Performance Audit",
+      "description": "Check page load speeds, Core Web Vitals, and mobile responsiveness.",
+      "link": "/audit?url=https://example.com&tab=performance"
+    },
+    {
+      "id": "srv-4",
+      "icon": "BarChart",
+      "title": "Competitor Tracking",
+      "description": "Monitor your rivals' rankings and uncover their top-performing keywords.",
+      "link": "/audit?url=https://example.com&tab=competitors"
+    }
+  ],
+  "banners": [
+    {
+      "id": "ban-1",
+      "title": "Boost Your Local SEO",
+      "description": "Discover how to optimize for local search and dominate your neighborhood map pack.",
+      "image": "/images/local-seo.png",
+      "link": "/local-seo-guide",
+      "type": "offpage"
+    },
+    {
+      "id": "ban-2",
+      "title": "Mastering Core Web Vitals",
+      "description": "A step-by-step guide to achieving perfect performance scores on Google.",
+      "image": "/images/core-web-vitals.png",
+      "link": "/performance-guide",
+      "type": "onpage"
+    }
+  ],
+  "links": [
+    { "label": "Home", "url": "/" },
+    { "label": "Tools", "url": "/#features" },
+    { "label": "Pricing", "url": "/pricing" },
+    { "label": "Blog", "url": "/blog" },
+    { "label": "Analyze", "url": "/analyze" }
+  ],
+  "auditResult": {
+    "url": "https://example.com",
+    "onPage": {
+      "score": 75,
+      "issues": [
+        { "id": "iss-1", "title": "Missing H1 Tag", "description": "The page does not have a primary H1 heading.", "severity": "high" },
+        { "id": "iss-2", "title": "Images Missing Alt Text", "description": "3 images on this page are missing alt attributes.", "severity": "medium" }
+      ],
+      "suggestions": [
+        { "id": "sug-1", "text": "Include your primary keyword in the first paragraph." }
+      ]
+    },
+    "offPage": {
+      "score": 60,
+      "recommendedPlatforms": [
+        { "id": "plat-1", "name": "LinkedIn", "type": "Social Media", "priority": "high" },
+        { "id": "plat-2", "name": "Medium", "type": "Blogging", "priority": "medium" }
+      ],
+      "contentIdeas": [
+        { "id": "idea-1", "title": "10 Ways to Improve SEO", "description": "A comprehensive listicle targeting beginners." },
+        { "id": "idea-2", "title": "Case Study: Local SEO Success", "description": "Share how a local business boosted their traffic by 300%." }
+      ]
+    },
+    "performance": {
+      "score": 82,
+      "metrics": [
+        { "name": "First Contentful Paint", "value": "1.2s", "status": "good" },
+        { "name": "Largest Contentful Paint", "value": "2.8s", "status": "needs-improvement" },
+        { "name": "Cumulative Layout Shift", "value": "0.15", "status": "needs-improvement" },
+        { "name": "Time to Interactive", "value": "3.5s", "status": "good" }
+      ]
+    },
+    "competitors": {
+      "topCompetitors": [
+        { "domain": "competitor1.com", "overlapScore": 85, "topKeywords": ["seo tools", "website audit", "backlink checker"] },
+        { "domain": "competitor2.net", "overlapScore": 72, "topKeywords": ["free seo audit", "competitor analysis", "keyword research"] },
+        { "domain": "competitor3.io", "overlapScore": 60, "topKeywords": ["seo software", "rank tracker", "site speed test"] }
+      ]
+    }
+  },
+  "pricing": [
+    {
+      "id": "price-1",
+      "tier": "Starter",
+      "price": "$29",
+      "billingCycle": "per month",
+      "description": "Perfect for small blogs and personal websites.",
+      "features": ["1 Website", "500 Pages Crawled", "Basic On-Page SEO", "Weekly Reports"],
+      "highlighted": false,
+      "ctaText": "Start Free Trial"
+    },
+    {
+      "id": "price-2",
+      "tier": "Pro",
+      "price": "$79",
+      "billingCycle": "per month",
+      "description": "Ideal for growing businesses and agencies.",
+      "features": ["5 Websites", "5,000 Pages Crawled", "Advanced SEO & Backlinks", "Daily Reports", "Competitor Tracking"],
+      "highlighted": true,
+      "ctaText": "Get Pro"
+    },
+    {
+      "id": "price-3",
+      "tier": "Enterprise",
+      "price": "$199",
+      "billingCycle": "per month",
+      "description": "For large scale organizations and enterprise needs.",
+      "features": ["Unlimited Websites", "100k+ Pages Crawled", "Custom API Access", "Dedicated Account Manager", "White-label Reports"],
+      "highlighted": false,
+      "ctaText": "Contact Sales"
+    }
+  ],
+  "blog": [
+    {
+      "id": "post-1",
+      "title": "The Ultimate Guide to Core Web Vitals",
+      "excerpt": "Learn how to optimize your website for Google's most important performance metrics.",
+      "date": "2026-07-15",
+      "author": "Jane Doe",
+      "category": "Performance"
+    },
+    {
+      "id": "post-2",
+      "title": "Link Building Strategies That Actually Work",
+      "excerpt": "Stop wasting time on spammy links. Discover the strategies top agencies use to build high-quality backlinks.",
+      "date": "2026-07-20",
+      "author": "John Smith",
+      "category": "Off-Page SEO"
+    },
+    {
+      "id": "post-3",
+      "title": "Why Keyword Density is a Myth",
+      "excerpt": "Search engines have evolved. Here's why you should focus on search intent instead of keyword stuffing.",
+      "date": "2026-07-25",
+      "author": "Alice Johnson",
+      "category": "On-Page SEO"
+    }
+  ]
+}
