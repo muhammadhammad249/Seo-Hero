@@ -52,11 +52,10 @@ function AuditLoader({ url }: { url: string }) {
       {/* Step indicators */}
       <div className="w-full max-w-sm space-y-2">
         {steps.map((s, i) => (
-          <div key={i} className={`flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all duration-300 ${
-            i < step ? 'bg-emerald-50 text-emerald-700' :
-            i === step ? 'bg-indigo-50 text-indigo-700 font-medium' :
-            'text-slate-400'
-          }`}>
+          <div key={i} className={`flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all duration-300 ${i < step ? 'bg-emerald-50 text-emerald-700' :
+              i === step ? 'bg-indigo-50 text-indigo-700 font-medium' :
+                'text-slate-400'
+            }`}>
             {i < step
               ? <CheckCircle size={16} className="text-emerald-500 shrink-0" />
               : i === step
@@ -76,8 +75,8 @@ function ScoreBadge({ score, color }: { score: number; color: string }) {
   const colorMap: Record<string, string> = {
     indigo: 'text-indigo-600 border-indigo-300 bg-indigo-50',
     violet: 'text-violet-600 border-violet-300 bg-violet-50',
-    amber:  'text-amber-600  border-amber-300  bg-amber-50',
-    emerald:'text-emerald-600 border-emerald-300 bg-emerald-50',
+    amber: 'text-amber-600  border-amber-300  bg-amber-50',
+    emerald: 'text-emerald-600 border-emerald-300 bg-emerald-50',
   };
   return (
     <div className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border text-sm font-bold ${colorMap[color]}`}>
@@ -99,8 +98,8 @@ function SectionHeader({
   const iconBg: Record<string, string> = {
     indigo: 'bg-indigo-600',
     violet: 'bg-violet-600',
-    amber:  'bg-amber-500',
-    emerald:'bg-emerald-600',
+    amber: 'bg-amber-500',
+    emerald: 'bg-emerald-600',
   };
   return (
     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-8 border-b border-slate-100">
@@ -121,7 +120,10 @@ function SectionHeader({
 /* ─────────────── Main Dashboard ─────────────── */
 export function AuditDashboard({ data }: Props) {
   const searchParams = useSearchParams();
-  const url = searchParams.get('url') || data.url;
+
+  const url =
+    searchParams?.get("url") ??
+    data.url;
 
   const [isAuditing, setIsAuditing] = useState(true);
 
@@ -158,7 +160,7 @@ export function AuditDashboard({ data }: Props) {
               <div className="text-center">
                 <div className="relative w-20 h-20">
                   <svg className="w-20 h-20 -rotate-90" viewBox="0 0 80 80">
-                    <circle cx="40" cy="40" r="34" fill="none" stroke="#e2e8f0" strokeWidth="8"/>
+                    <circle cx="40" cy="40" r="34" fill="none" stroke="#e2e8f0" strokeWidth="8" />
                     <circle cx="40" cy="40" r="34" fill="none"
                       stroke={overallScore >= 80 ? '#10b981' : overallScore >= 60 ? '#f59e0b' : '#ef4444'}
                       strokeWidth="8"
@@ -203,11 +205,10 @@ export function AuditDashboard({ data }: Props) {
               <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">Issues Found</h3>
               <div className="space-y-3">
                 {data.onPage.issues.map(issue => (
-                  <div key={issue.id} className={`flex gap-3 p-4 rounded-xl border ${
-                    issue.severity === 'high'
+                  <div key={issue.id} className={`flex gap-3 p-4 rounded-xl border ${issue.severity === 'high'
                       ? 'bg-rose-50 border-rose-100'
                       : 'bg-amber-50 border-amber-100'
-                  }`}>
+                    }`}>
                     {issue.severity === 'high'
                       ? <AlertCircle size={18} className="text-rose-500 shrink-0 mt-0.5" />
                       : <AlertTriangle size={18} className="text-amber-500 shrink-0 mt-0.5" />
@@ -215,9 +216,8 @@ export function AuditDashboard({ data }: Props) {
                     <div>
                       <div className="flex items-center gap-2 mb-0.5">
                         <h4 className="font-semibold text-slate-900 text-sm">{issue.title}</h4>
-                        <span className={`text-xs px-2 py-0.5 rounded-full font-bold ${
-                          issue.severity === 'high' ? 'bg-rose-100 text-rose-700' : 'bg-amber-100 text-amber-700'
-                        }`}>{issue.severity}</span>
+                        <span className={`text-xs px-2 py-0.5 rounded-full font-bold ${issue.severity === 'high' ? 'bg-rose-100 text-rose-700' : 'bg-amber-100 text-amber-700'
+                          }`}>{issue.severity}</span>
                       </div>
                       <p className="text-slate-600 text-xs leading-relaxed">{issue.description}</p>
                     </div>
@@ -279,11 +279,10 @@ export function AuditDashboard({ data }: Props) {
                         <p className="text-xs text-slate-400 uppercase tracking-wide">{platform.type}</p>
                       </div>
                     </div>
-                    <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                      platform.priority === 'high'   ? 'bg-rose-100 text-rose-700' :
-                      platform.priority === 'medium' ? 'bg-amber-100 text-amber-700' :
-                                                        'bg-slate-100 text-slate-600'
-                    }`}>
+                    <span className={`px-3 py-1 rounded-full text-xs font-bold ${platform.priority === 'high' ? 'bg-rose-100 text-rose-700' :
+                        platform.priority === 'medium' ? 'bg-amber-100 text-amber-700' :
+                          'bg-slate-100 text-slate-600'
+                      }`}>
                       {platform.priority}
                     </span>
                   </div>
@@ -322,18 +321,16 @@ export function AuditDashboard({ data }: Props) {
           {/* Metrics grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             {data.performance.metrics.map((metric, i) => (
-              <div key={i} className={`p-5 rounded-2xl border flex flex-col gap-3 ${
-                metric.status === 'good' ? 'bg-emerald-50 border-emerald-100' :
-                metric.status === 'needs-improvement' ? 'bg-amber-50 border-amber-100' :
-                'bg-rose-50 border-rose-100'
-              }`}>
+              <div key={i} className={`p-5 rounded-2xl border flex flex-col gap-3 ${metric.status === 'good' ? 'bg-emerald-50 border-emerald-100' :
+                  metric.status === 'needs-improvement' ? 'bg-amber-50 border-amber-100' :
+                    'bg-rose-50 border-rose-100'
+                }`}>
                 <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide">{metric.name}</p>
                 <p className="text-3xl font-extrabold text-slate-900">{metric.value}</p>
-                <span className={`self-start text-xs font-bold px-2 py-1 rounded-full ${
-                  metric.status === 'good' ? 'bg-emerald-200 text-emerald-800' :
-                  metric.status === 'needs-improvement' ? 'bg-amber-200 text-amber-800' :
-                  'bg-rose-200 text-rose-800'
-                }`}>
+                <span className={`self-start text-xs font-bold px-2 py-1 rounded-full ${metric.status === 'good' ? 'bg-emerald-200 text-emerald-800' :
+                    metric.status === 'needs-improvement' ? 'bg-amber-200 text-amber-800' :
+                      'bg-rose-200 text-rose-800'
+                  }`}>
                   {metric.status === 'good' ? '✓ Good' : metric.status === 'needs-improvement' ? '⚠ Improve' : '✗ Poor'}
                 </span>
               </div>
